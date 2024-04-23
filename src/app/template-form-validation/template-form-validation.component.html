@@ -1,0 +1,165 @@
+<div class="container-fluid">
+    <form [formGroup]="candidatform" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <!-- Title -->
+            <div class="d-flex justify-content-between align-items-lg-center py-3 flex-column flex-lg-row">
+                <h2 class="h5 mb-3 mb-lg-0"><a href="../../pages/admin/customers.html" class="text-muted"><i
+                            class="bi bi-arrow-left-square me-2"></i></a> Enregistrer Candidat</h2>
+                <!-- Afficher le bloc uniquement lorsque enregistrementEffectue est true -->
+                <div *ngIf="enregistrementEffectue" class="alert alert-success d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                        <use xlink:href="#check-circle-fill" />
+                    </svg>
+                    <div>
+                        Enregistrement effectué avec succès
+                    </div>
+                </div>
+            </div>
+            <!-- Main content -->
+            <div class="row">
+                <!-- Left side -->
+                <div class="col-lg-8">
+                    <!-- Basic information -->
+                    <div class="card mb-4">
+
+                        <div class="card-body">
+                            <h3 class="h6 mb-4">Information personnel</h3>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Prenom</label>
+                                        <input type="text" class="form-control" formControlName="prenom">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Nom</label>
+                                        <input type="text" class="form-control" formControlName="nom">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Slogan</label>
+                                        <input type="text" class="form-control" formControlName="slogan">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="text" class="form-control" formControlName="email">
+                                    </div>
+                                </div>
+                                <!-- <button class="btn btn-primary btn-sm btn-icon-text"><i class="bi bi-save"></i> <span
+                                        class="text">Enregistrer</span></button> -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Address -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="h6 mb-4">Addresse</h3>
+                            <div class="mb-3">
+                                <label class="form-label">Address domicile</label>
+                                <input type="text" class="form-control" formControlName="adressedomicile">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Address siège</label>
+                                <input type="text" class="form-control" formControlName="adressesiege">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Pays</label>
+                                        <select class="select2 form-control select2-hidden-accessible"
+                                            data-select2-placeholder="Select country"
+                                            data-select2-id="select2-data-1-gy14" tabindex="-1" aria-hidden="true"
+                                            formControlName="pays">
+                                            <option data-select2-id="select2-data-3-ibs9"></option>
+                                            <option value="SN">Sénégal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Region</label>
+                                        <select class="select2 form-control select2-hidden-accessible"
+                                            data-select2-placeholder="Select state"
+                                            data-select2-id="select2-data-4-680y" tabindex="-1" aria-hidden="true"
+                                            formControlName="region">
+                                            <option data-select2-id="select2-data-6-cshs"></option>
+                                            <option value="DK">Dakar</option>
+                                            <option value="TH">Thies</option>
+                                            <option value="ST">Saint-Louis</option>
+                                            <option value="KL">Kaolack</option>
+                                            <option value="DL">Diourbel</option>
+                                            <option value="ZG">Ziguinchor</option>
+                                            <option value="MT">Matam</option>
+                                            <option value="FT">Fouta</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right side -->
+                <div class="col-lg-4">
+                    <!-- Status -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="h6">Couleur</h3>
+                            <select class="form-select" formControlName="couleur">
+                                <option value="red">Rouge</option>
+                                <option value="green">Vert</option>
+                                <option value="blue">Bleu</option>
+                                <option value="cyan">Cyan</option>
+                                <option value="magenta">Magenta</option>
+                                <option value="yellow">Jaune</option>
+                                <option value="black">Noir</option>
+                                <option value="white">Blanc</option>
+                                <option value="gray">Gris</option>
+                                <option value="navy">Bleu marine</option>
+                                <option value="silver">Argent</option>
+                                <option value="purple">Violet</option>
+                                <option value="teal">Sarcelle</option>
+                                <option value="fuchsia">Fuchsia</option>
+                                <option value="aqua">Aqua</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Avatar -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="h6">Photo</h3>
+                            <input class="form-control" type="file" formControlName="photo">
+                        </div>
+                    </div>
+                    <!-- Notes -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="h6">Site du candidat</h3>
+                            <textarea class="form-control" rows="3" formControlName="url"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="hstack gap-3">
+                    <button class="btn btn-danger btn-sm btn-icon-text col-lg-8"><i class="bi bi-x"></i> <span
+                            class="text">Annuler</span></button>
+                    <button class="btn btn-primary btn-sm btn-icon-text col-lg-8"><i class="bi bi-save"></i> <span
+                            class="text">Enregistrer</span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
